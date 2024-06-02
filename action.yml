@@ -1,0 +1,31 @@
+name: 'Vlt Action'
+description: 'Get secrets from HCP Vault and set them as environment variables'
+inputs:
+  hcp_client_id:
+    required: true
+    description: 'HCP Client ID'
+  hcp_client_secret:
+    required: true
+    description: 'HCP Client Secret'
+  hcp_organization:
+    required: true
+    description: 'HCP Organization'
+  hcp_project:
+    required: true
+    description: 'HCP Project'
+  vlt_application_name:
+    required: true
+    description: 'VLT Application Name'
+  secrets_map:
+    required: true
+    description: 'Secrets map'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    HCP_CLIENT_ID: ${{ inputs.hcp_client_id }}
+    HCP_CLIENT_SECRET: ${{ inputs.hcp_client_secret }}
+    HCP_ORGANIZATION: ${{ inputs.hcp_organization }}
+    HCP_PROJECT: ${{ inputs.hcp_project }}
+    VLT_APPLICATION_NAME: ${{ inputs.vlt_application_name }}
+    SECRETS_MAP: ${{ inputs.secrets_map }}
