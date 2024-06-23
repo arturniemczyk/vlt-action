@@ -1,0 +1,9 @@
+{
+  "release-type": "simple",
+  "include-v-in-tag": true,
+  "packages": {
+    ".": {}
+  },
+  "pull-request-title-pattern": "Release${component} ${version}",
+  "pull-request-header": ":robot: The release is created and waits to be deployed."
+}
