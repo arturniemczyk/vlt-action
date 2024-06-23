@@ -1,0 +1,12 @@
+name: Check
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
+
+jobs:
+  check:
+    uses: ./.github/workflows/build.yaml
